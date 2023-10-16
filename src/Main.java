@@ -13,14 +13,14 @@ public class Main {
         int choice = scanner.nextInt();
 
         switch (choice) {
-            case 1 -> Date();
-            case 2 -> Prism();
-            case 3 -> Calendar();
+            case 1 -> getDate();
+            case 2 -> getPrism();
+            case 3 -> getCalendar();
             default -> System.out.println("Невірний вибір!");
         }
         scanner.close();
     }
-    private static void Date() throws ParseException {
+    private static void getDate() throws ParseException {
                 Scanner scanner = new Scanner(System.in);
 
                 System.out.println("Оберіть дію:");
@@ -98,7 +98,7 @@ public class Main {
                 System.out.print(prompt);
                 return scanner.nextInt();
             }
-    private static void Prism() {
+    private static void getPrism() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Введіть висоту призми: ");
@@ -116,17 +116,17 @@ public class Main {
 
         scanner.close();
     }
-    private static void Calendar() {
+    private static void getCalendar() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Введіть день (число): ");
+        System.out.print("Введіть день: ");
         int day = scanner.nextInt();
-
         System.out.print("Введіть рік: ");
         int year = scanner.nextInt();
 
         Calendar calendar = new Calendar(day, year);
-        calendar.DateAndDayOfWeek();
+        String result = calendar.DateAndDayOfWeek();
+        System.out.println(result);
 
         scanner.close();
     }
